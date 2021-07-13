@@ -13,7 +13,7 @@ const url =
 const dbName = "messageBoard";
 let db;
 
-app.use(bodyParser.text());
+app.use(bodyParser.json());
 app.use(cors());
 
 const client = new MongoClient(url, { useUnifiedTopology: true });
