@@ -29,9 +29,10 @@ client.connect(function (err) {
 app.listen(port, () => console.log("App Running on port ", port));
 
 app.post("/api/message", (req, res) => {
-  console.log(req.body);
+  const message = req.body;
+  console.log("message: " + message.msg);
   res.status(200).send();
-  db.collection("messages").insertOne({ msg: req.body });
+  db.collection("messages").insertOne(message);
 });
 
 app.get("/api/message", async (req, res) => {
