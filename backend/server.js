@@ -7,6 +7,7 @@ const app = express();
 const port = 3000;
 
 //connection string: use for shell
+
 const url =
   "mongodb+srv://noah:Maxfire1109!@cluster0.ipfee.mongodb.net/defaultauthdb?retryWrites=true&w=majority";
 
@@ -30,7 +31,7 @@ app.listen(port, () => console.log("App Running on port ", port));
 
 app.post("/api/message", (req, res) => {
   const message = req.body;
-  console.log("message: " + message.msg);
+  console.log("message: " + message.msg + " bastages");
   res.status(200).send();
   db.collection("messages").insertOne(message);
 });
